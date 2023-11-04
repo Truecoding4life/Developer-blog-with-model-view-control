@@ -1,8 +1,5 @@
-// Dependencies
 const express = require('express');
-// Import express-handlebars
 const exphbs = require('express-handlebars');
-//create(): A convenience factory function for creating ExpressHandlebars instances. OR exphbs()
 const hbs = exphbs.create({});
 const path = require('path');
 
