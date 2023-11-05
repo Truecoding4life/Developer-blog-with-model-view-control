@@ -10,14 +10,21 @@
 }
 
 nav a {
-    border: none;
-    color: rgb(14, 10, 10);
+
     font-size: 20px;
-    cursor: pointer;
+    cursor: grab;
     padding: 5px;
     text-decoration: none;
 }
 
-body {
-    background-color: rgb(44, 13, 13);
+header {
+    background-color: var(--themeColor);
+    padding: 20px;
+    margin-top: 50px;
 }
+nav {
+    background-color: rgba(184, 184, 177, 0.812);
+    margin-bottom: 40px;
+    max-height: 50px;
+}
+
