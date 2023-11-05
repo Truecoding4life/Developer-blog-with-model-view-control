@@ -40,3 +40,17 @@ Creating directories within the convention of MVC (Model-View-Control)
     - app.use express.json/urlencoded/static(public)
     - engine, handlebars, helpers, session
 - session: secret, cookie
+
+
+## MODEL
+Users <-> Posts/Comments one to many relationships)
+
+
+USER hasOne Post
+Post Belong To User
+
+User hasOne Comment
+Comment Belong to User
+
+Post HasManyComment
+Comment belongTo Post
