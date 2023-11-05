@@ -1,0 +1,27 @@
+:root {
+    --themeColor: rgba(40, 196, 144, 0.806);
+}
+*{
+    margin: 5px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif, Arial;
+    border-radius: 10px;
+}
+body {
+    background-color: rgba(8, 5, 2, 0.78);
+    max-width: 1400px;
+}
+
+
+nav a {
+    border: none;
+    color: rgb(14, 10, 10);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    text-decoration: none;
+}
+body{
+    height: 4000px;
+}
