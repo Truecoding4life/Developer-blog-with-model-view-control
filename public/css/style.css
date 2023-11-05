@@ -20,11 +20,12 @@ nav a {
 header {
     background-color: var(--themeColor);
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 nav {
-    background-color: rgba(184, 184, 177, 0.812);
+    background-color: rgba(185, 183, 180, 0.826);
     margin-bottom: 40px;
     max-height: 50px;
 }
+
 
