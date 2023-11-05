@@ -8,11 +8,6 @@
     font-family: Poppins, sans-serif, Arial;
     border-radius: 10px;
 }
-body {
-    background-color: rgba(8, 5, 2, 0.78);
-    max-width: 1400px;
-}
-
 
 nav a {
     border: none;
@@ -22,6 +17,7 @@ nav a {
     padding: 5px;
     text-decoration: none;
 }
-body{
-    height: 4000px;
+
+body {
+    background-color: rgb(44, 13, 13);
 }
