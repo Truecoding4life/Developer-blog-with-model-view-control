@@ -1,5 +1,5 @@
 :root {
-    --themeColor: rgba(40, 196, 144, 0.806);
+    --themeColor: rgba(24, 138, 100, 0.938);
 }
 *{
     margin: 5px;
@@ -23,8 +23,9 @@ header {
     margin-top: 40px;
 }
 nav {
-    background-color: rgba(185, 183, 180, 0.826);
-    margin-bottom: 40px;
+    margin-top: 15px;
+    background-color: rgba(220, 214, 205, 0.826);
+    margin-bottom: 30px;
     max-height: 50px;
 }
 
