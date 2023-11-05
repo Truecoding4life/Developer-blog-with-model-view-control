@@ -2,17 +2,17 @@ const Post = require('../models/post');
 
 const Posts = [
     {
-        title: "Post 1",
-        content: "This is the first post",
-        user_id: 1,
+        title: "What I is Bootstrap?",
+        content: "Bootstrap is a popular open-source front-end framework for web development. ",
+        user_id: 3,
     },{
-        title: "Post 2",
-        content: "This is the second post",
+        title: "My first post",
+        content: "Hello Devs! This is my first post.",
         user_id: 2,
     },{
-        title: "Post 3",
-        content: "This is the third post",
-        user_id: 3,
+        title: "Group Study Anybody ? ",
+        content: "Here is the link to my discord join me here https://discord.gg/",
+        user_id: 1,
     }
 ]
 

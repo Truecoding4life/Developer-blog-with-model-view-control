@@ -5,9 +5,9 @@ const seedUser = require('./userData');
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
-    await seedComment();
-    await seedPost();
     await seedUser();
+     await seedPost();
+    await seedComment();
     process.exit(0);
 }
 seedAll();
