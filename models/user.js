@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class User extends Model{}
+class User extends Model {}
 
 User.init(
     {
@@ -11,32 +11,32 @@ User.init(
             autoIncrement:true,
         },
         first_Name:{
-            type:DataTypes.INTEGER,
+            type:DataTypes.STRING,
             allowNull: false,
-            isAlphanumeric:true,
+            isAlphanumeric:true
         },
         last_Name:{
-            type:DataTypes.INTEGER,
+            type:DataTypes.STRING,
             allowNull: false,
-            isAlphanumeric:true,
+            isAlphanumeric:true
         },
         email:{
-            type:DataTypes.INTEGER,
+            type:DataTypes.STRING,
             allowNull: false,
-            isEmail:true,
+            isEmail:true
         },
         password:{
-            type:DataTypes.INTEGER,
-            allowNull: false,
+            type:DataTypes.STRING,
             isAlphanumeric:true,
+            allowNull: false,
+            isAlphanumeric:true
         },
     },
-    sequelize,
-    {
-        timestamps:true,
+    {   sequelize,
+        timestamps:false,
         freezeTableName:true,
         underscored:false,
-        modelName:'user',
+        modelName:'user'
     }
 )
 

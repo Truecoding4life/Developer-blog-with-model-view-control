@@ -16,6 +16,6 @@ const Posts = [
     }
 ]
 
-const seedComment = Post.bulkCreate(Posts);
+const seedComment = ()=> Post.bulkCreate(Posts);
 
 module.exports = seedComment;
