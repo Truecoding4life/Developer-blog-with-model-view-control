@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const hbs = exphbs.create({});
 const path = require('path');
+const sequelize = require('./config/connection');
 
 
 // Sets up the Express App
