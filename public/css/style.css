@@ -11,7 +11,7 @@
 
 nav a {
 
-    font-size: 20px;
+    font-size: 15px;
     cursor: grab;
     padding: 5px;
     text-decoration: none;
@@ -28,5 +28,3 @@ nav {
     margin-bottom: 30px;
     max-height: 50px;
 }
-
-

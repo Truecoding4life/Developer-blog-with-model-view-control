@@ -31,6 +31,7 @@ router.get("/login", async (req, res) => {
   }
 });
 
+// Get All post and display on dashboard
 router.get("/dashboard", async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -47,4 +48,12 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
+// get sign up up
+router.get('/signup', async(req,res) =>{
+    try{
+        res.render('signup')
+    } 
+    catch(err){
+        res.status(500).json(err)}
+})
 module.exports = router;
