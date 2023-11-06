@@ -17,7 +17,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
-app.use(require('./controllers/'));
+// app.use(require('./controllers/'));
 
   
 // Starts the server to begin listening
