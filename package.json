@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-handlebars": "^7.1.2",
@@ -7,7 +8,8 @@
     "mysql2": "^3.6.3",
     "nodemon": "^3.0.1",
     "path": "^0.12.7",
-    "sequelize": "^6.34.0"
+    "sequelize": "^6.34.0",
+    "sess": "^0.1.4"
   },
   "scripts": {
     "start": "node server.js",

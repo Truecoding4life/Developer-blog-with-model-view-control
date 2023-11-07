@@ -3,7 +3,9 @@
             <button class="btn btn-success mb-4 p-3" type="button">Create Post</button>
         </div>
     </div>
+
 {{#each posts as |post|}}
+
 <div class="container mb-4">
         <div class="card border border-3" style="width: 100% ">
             <div class="card-body">
@@ -13,6 +15,7 @@
               <a href="/posts/{{post.id}}" class="card-link"> View Post </a>
             </div>
         </div>
-</div>    
+</div> 
+
 {{/each}}
 </div>
