@@ -5,6 +5,7 @@ const hbs = exphbs.create({});
 const path = require('path');
 const sequelize = require('./config/connection');
 const session = require('express-session') 
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
 // Sets up the Express App
@@ -32,7 +33,6 @@ const sess = {
 };
 
 app.use(session(sess));  
-
 // Starts the server to begin listening
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
