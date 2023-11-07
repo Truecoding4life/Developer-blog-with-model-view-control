@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
         model: User,
         attributes: ["first_Name", "last_Name"],
       },
-      attributes: ["title", "content"],loggedIn: req.session.loggedIn,
+      attributes: ["title", "content"],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
 // Route for login
 router.get("/login", async (req, res) => {
   try {
-    if (req.session.loggedIn) {
+    if (req.session.loggedIn==true) {
       res.status(200).redirect('/');
       return;
     }
