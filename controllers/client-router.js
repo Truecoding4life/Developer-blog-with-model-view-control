@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { User, Post } = require("../models");
 
-// Get All Post render to homepage
+// Route for homepage
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -10,28 +10,35 @@ router.get("/", async (req, res) => {
         model: User,
         attributes: ["first_Name", "last_Name"],
       },
-      attributes: ["title", "content"],
+      attributes: ["title", "content"],loggedIn: req.session.loggedIn,
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.status(200).render("homepage", { posts });
+    res.status(200).render("homepage", { 
+      posts,
+      loggedIn: req.session.loggedIn, });
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
 });
 
-// Get All Comments from Post render to post page
+// Route for login
 router.get("/login", async (req, res) => {
   try {
-    res.status(200).render("login");
+    if (req.session.loggedIn) {
+      res.status(200).redirect('/');
+      return;
+    }
+    // Otherwise, render the 'login' template
+    res.status(200).render('login');
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
 });
 
-// Get All post and display on dashboard
+// Route for  dashboard
 router.get("/dashboard", async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -42,13 +49,13 @@ router.get("/dashboard", async (req, res) => {
       attributes: ["title", "content"],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.status(200).render("dashboard", { posts });
+    res.status(200).render("dashboard", { posts: posts, loggedIn: req.session.loggedIn});
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// get sign up up
+// Route for Sign Up
 router.get('/signup', async(req,res) =>{
     try{
         res.render('signup')
