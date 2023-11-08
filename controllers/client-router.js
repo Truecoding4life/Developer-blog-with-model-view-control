@@ -64,6 +64,19 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
+// route for create post
+router.get("/create", async (req, res) => {
+    try{
+      if(req.session.loggedIn){
+        res.status(200).render('createpost');
+      }else{
+        res.status(404).render('dashboard');}
+    }catch(err){
+      res.status(500).json(err);
+    }
+});
+
+
 // Route for Sign Up
 router.get('/signup', async(req,res) =>{
     try{

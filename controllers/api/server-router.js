@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post } = require('../../models');
 
 // Create new user
 router.post('/signup', async (req, res) => {
@@ -40,8 +40,19 @@ router.put('/', async (req, res) => {});
 // Delete a post
 router.delete('/', async (req, res) => {});
 
-// Create new Comment
-router.post('/', async (req, res) => {});
+// Create new post
+router.post('/api/create', async (req, res) => {
+  try{
+    const postData = await Post.create({
+      title: req.body.title,
+      content: req.body.content,
+      user_id: req.session.user_id,
+    });
+    res.status(200).json(postData);
+  }catch(err){
+    res.status(400).json(err);
+  }
+});
 
 // User Logout
 router.post('/logout', (req, res) => {
