@@ -38,10 +38,16 @@ router.get("/login", async (req, res) => {
   }
 });
 
+
+
 // Route for  dashboard
 router.get("/dashboard", async (req, res) => {
   try {
+    if(req.session.loggedIn){
     const postData = await Post.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
       include: {
         model: User,
         attributes: ["first_Name", "last_Name"],
@@ -50,6 +56,9 @@ router.get("/dashboard", async (req, res) => {
     });
     const posts = postData.map((post) => post.get({ plain: true }));
     res.status(200).render("dashboard", { posts: posts, loggedIn: req.session.loggedIn});
+  } else {
+    res.status(200).render("dashboard", { loggedIn: req.session.loggedIn});
+  }
   } catch (err) {
     res.status(500).json(err);
   }
