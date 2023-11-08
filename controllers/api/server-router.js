@@ -34,11 +34,25 @@ router.post('/login', async (req, res) => {
   
 });
 
-// Update a post
-router.put('/', async (req, res) => {});
+
 
 // Delete a post
-router.delete('/', async (req, res) => {});
+router.delete('/dashboard', async (req, res) => {
+  try{
+    const deleteData = await Post.destroy({
+      where: {
+        id: req.body.id,
+      },
+    });
+    if (!deleteData) {
+      res.status(404).json("delete failed");
+      return;
+    }
+    res.status(200).json(deleteData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // Create new post
 router.post('/create', async (req, res) => {

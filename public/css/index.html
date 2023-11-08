@@ -39,24 +39,39 @@
         </nav>
     </div>
 
+    {{#if loggedIn}}
     <div class="container">
-        <form class="create-form">
-            <div class="form-group">
-              <label for="Blog-title" class="text-white">Blog title: </label>
-              <input class="form-control" id="post_name" placeholder="what is it about ? ">
-            </div>
-            <div class="form-group">
-            <div class="form-group">
-              <label for="content" class="text-white"> What's on your mind </label>
-              <textarea class="form-control" id="post_content" placeholder="write it here !!" rows="3"></textarea>
-            </div>
-          </form>
-          <div class="d-flex mt-4">
-            <button type="submit" class="btn col-12 btn-success me-2"> Post it</button>
-            </div>
-
-          <script src="../js/createpost.js"></script>
-    </div>
+           <div class="d-grid gap-2">
+               <a class="btn btn-success mb-4 p-3" href="/create" type="button">Create Post</a>
+           </div>
+       </div>
+   
+   {{#each posts as |post|}}
+   
+   <div class="container mb-4">
+           <div class="card border border-3 blogpost"  style="width: 100% ">
+               <div class="card-body">
+                 <h5 class="card-title">{{post.title}}</h5>
+                 <h6 class="card-subtitle m-2 text-body-secondary"> Posted By : {{post.user.first_Name}} {{post.user.last_Name}} </h6>
+                 <p class="card-text">{{post.content}}</p>
+                   <div class="d-flex">
+                   <button type="button" class="btn col-3-sm btn-danger me-2">Delete</button>
+   
+                   </div>
+               </div>
+           </div>
+   </div> 
+   
+   {{/each}}
+   <script src="/js/dashboard.js"></script>
+   </div>
+   {{else}}
+   <div class="container">
+       <div class="d-grid gap-2">
+           <a class="btn btn-warning mb-4 p-3" href="/login" > You must create an account </a>
+       </div>
+   </div>
+   {{/if}}
 
 </body>
 

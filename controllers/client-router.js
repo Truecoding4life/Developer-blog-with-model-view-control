@@ -52,7 +52,7 @@ router.get("/dashboard", async (req, res) => {
         model: User,
         attributes: ["first_Name", "last_Name"],
       },
-      attributes: ["title", "content"],
+      attributes: ["title", "content","id"],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
     res.status(200).render("dashboard", { posts: posts, loggedIn: req.session.loggedIn});

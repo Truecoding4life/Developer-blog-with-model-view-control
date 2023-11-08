@@ -1,22 +1,24 @@
+const postid= document.querySelector('.postid').textContent
 const deleteHandler = async (event) => {
     event.preventDefault();
-
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-    const link = ('/api/login');
-    if (email && password) {
+    const link = ('/api/dashboard');
+    console.log(postid);
     const response = await fetch(link, {
-      method: 'POST',
-      body: JSON.stringify({ email, password, }),
-      headers: { 'Content-Type': 'application/json' },
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json', 
+         
+        },
+       body: JSON.stringify({id: postid})
+     
    });
 
 if (response.ok) {
-document.location.replace('/');
+document.location.replace('/dashboard');
 } else {
-alert('Failed to log in.');
-}}};
+alert('Delete Failed.');
+}};
 
 
 
-document.querySelector('.blogpost').addEventListener('submit', deleteHandler);
+document.querySelector('.blogpost').addEventListener('click', deleteHandler);
