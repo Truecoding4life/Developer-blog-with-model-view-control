@@ -1,4 +1,9 @@
-# MVC-
+# Developer World Blog, MVC- MODEL CONTROL VIEW 
+
+
+## Description 
+Welcome to the Developer Blog website, your platform for freely sharing your thoughts about the latest and greatest in technology, the most creative design ideas, and more. To unlock the full potential of our platform, simply log in with your email address and password. Once logged in, you're ready to unleash your ideas and insights to the world.
+
 
 ## PSEUDO-CODE
 Creating directories within the convention of MVC (Model-View-Control)
