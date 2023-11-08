@@ -68,7 +68,7 @@ router.get("/dashboard", async (req, res) => {
 router.get("/create", async (req, res) => {
     try{
       if(req.session.loggedIn){
-        res.status(200).render('createpost');
+        res.status(200).render('createpost', {loggedIn: req.session.loggedIn});
       }else{
         res.status(404).render('dashboard');}
     }catch(err){
