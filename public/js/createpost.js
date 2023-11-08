@@ -14,7 +14,7 @@ const createFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to sign up.');
+        alert('Error 500, Request error, Please try again.');
       }
     }
   } 
