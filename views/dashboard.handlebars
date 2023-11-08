@@ -8,17 +8,21 @@
 {{#each posts as |post|}}
 
 <div class="container mb-4">
-        <div class="card border border-3" style="width: 100% ">
+        <div class="card border border-3 blogpost"  style="width: 100% ">
             <div class="card-body">
               <h5 class="card-title">{{post.title}}</h5>
               <h6 class="card-subtitle m-2 text-body-secondary"> Posted By : {{post.user.first_Name}} {{post.user.last_Name}} </h6>
               <p class="card-text">{{post.content}}</p>
-              <a href="/posts/{{post.id}}" class="card-link"> View Post </a>
+                <div class="d-flex">
+                <button type="button" class="btn col-3-sm btn-danger me-2">Delete</button>
+
+                </div>
             </div>
         </div>
 </div> 
 
 {{/each}}
+<script src="/js/dashboard.js"></script>
 </div>
 {{else}}
 <div class="container">
