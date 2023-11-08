@@ -1,9 +1,9 @@
     <div class="container text-white pt-4">
-        <form id="signup-form">
+        <form class="signup-form">
             <div class="mb-3">
                 <h1> Sign Up </h1>
                 <label for="userEmail" class="form-label" required>Email address</label>
-                <input type="email" id="email-signup" class="form-control" id="userEmail" placeholder="Enter Valid Email" aria-describedby="emailHelp">
+                <input type="email" id="emailSignup" class="form-control" id="userEmail" placeholder="Enter Valid Email" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="input-group input-group-md mb-3">
@@ -12,7 +12,7 @@
               </div>
             <div class="mb-3">
                 <label for="password" class="form-label"  required>Password</label>
-                <input type="password" id="password-signup" class="form-control" placeholder="************" id="userPassword">
+                <input type="password" id="passwordSignup" class="form-control" placeholder="************" id="userPassword">
                 <div id="emailHelp" class="form-text">Must be 8-20 characters long.</div>
             </div>
             <div class="d-flex">
@@ -20,3 +20,36 @@
             </div>
         </form>
     </div>
+    <script>
+       
+    const signupFormHandler = async (event) => {
+  event.preventDefault();
+
+  const firstName = document.querySelector('#firstName').value.trim();
+  const lastName = document.querySelector('#lastName').value.trim();
+  const email = document.querySelector('#emailSignup').value.trim();
+  const password = document.querySelector('#passwordSignup').value.trim();
+
+  if (firstName && lastName && email && password) {
+    const response = await fetch('/api/signup', {
+      method: 'POST',
+      body: JSON.stringify([{ first_Name: firstName,
+      last_Name: lastName, 
+      email: email,
+    password: password, }]),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert('Failed to sign up.');
+    }
+  }
+} 
+
+document
+.querySelector('.signup-form')
+.addEventListener('submit', signupFormHandler);
+
+</script>
