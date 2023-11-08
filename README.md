@@ -4,6 +4,8 @@
 ### Resources
 [GitHub Repository](https://github.com/Truecoding4life/Developer-blog-with-model-view-control)
 
+[Deployed Link](https://developer-blogpost-a4d9376f41de.herokuapp.com/dashboard)
+
 [Jay's Studio](https://truecoding4life.github.io/Jaystudio/)
 
 

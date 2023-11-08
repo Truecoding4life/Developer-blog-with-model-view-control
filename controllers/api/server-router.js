@@ -41,7 +41,7 @@ router.put('/', async (req, res) => {});
 router.delete('/', async (req, res) => {});
 
 // Create new post
-router.post('/api/create', async (req, res) => {
+router.post('/create', async (req, res) => {
   try{
     const postData = await Post.create({
       title: req.body.title,

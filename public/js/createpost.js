@@ -1,7 +1,7 @@
 const createFormHandler = async (event) => {
     event.preventDefault();
   
-    const title = document.querySelector('#post_title').value.trim();
+    const title = document.querySelector('#post_name').value.trim();
     const content = document.querySelector('#post_content').value.trim();
   
     if (title && content ) {
@@ -21,4 +21,4 @@ const createFormHandler = async (event) => {
   
   document
   .querySelector('.create-form')
-  .addEventListener('submit', signupFormHandler);
+  .addEventListener('submit', createFormHandler);
