@@ -33,11 +33,11 @@
                             </li>
                                 {{#if loggedIn}}
                                  <li class="nav-item"></li>
-                                <button id="logout" class="nav-link" >Logout</button>
+                                <button id="logout" class="nav-link " >Logout</button>
                                 </li>
                                  {{else}}
                             <li class="nav-item">
-                                <a id='logout' class="nav-link disabled" aria-disabled="true">logout</a>
+                                <button id='logout' class="nav-link disabled" aria-disabled="true" style="margin-top: 3px;">logout</button>
                             </li>
                                 {{/if}}
                         </ul>
@@ -49,7 +49,7 @@
             {{{body}}}
           
 
-    <script src="./js/login.js"></script>
+   
     <script src="./js/logout.js"></script>
         </body>
 

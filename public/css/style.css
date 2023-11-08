@@ -28,3 +28,9 @@ nav {
     margin-bottom: 30px;
     max-height: 50px;
 }
+#logout {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 10px;
+    border-style: none;
+}
