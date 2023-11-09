@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { User, Post } = require("../models");
+const { User, Post, Comment} = require("../models");
 
 // Route for homepage
 router.get("/", async (req, res) => {
@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
         model: User,
         attributes: ["first_Name", "last_Name", "email"],
       },
-      attributes: ["title", "content"],
+      attributes: ["title", "content",'id'],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -76,6 +76,43 @@ router.get("/create", async (req, res) => {
     }
 });
 
+
+
+// one post
+router.get('/post/:id', async (req, res) => {
+  try {
+    if(req.session.loggedIn){
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['first_Name', 'last_Name'],
+        },
+        {
+          model: Comment,
+          include: [
+            {
+              model: User,
+              attributes: ['first_Name', 'last_Name'],
+            },
+          ],
+        },
+      ],
+    })
+    if(postData){
+    const post = postData.get({ plain: true });
+    console.log(post) 
+    res.render('onepost', { post: post, loggedIn: req.session.loggedIn});
+    }
+   
+    res.status(200).render('onepost', { post: post, loggedIn: req.session.loggedIn});
+  } else {
+    res.status(404).render('dashboard');
+  }
+  } catch(err){
+    res.status(500).json(err);
+  }
+});
 
 // Route for Sign Up
 router.get('/signup', async(req,res) =>{
